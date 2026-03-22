@@ -1,0 +1,21 @@
+{
+  "name": "playwright-education-api-tests",
+  "version": "1.0.0",
+  "description": "Playwright API automation for Mockerito Education API",
+  "scripts": {
+    "test": "playwright test --workers=1",
+    "test:failed": "playwright test --last-failed --workers=1",
+    "test:debug": "playwright test --debug --workers=1",
+    "test:report": "playwright test --reporter=html",
+    "report": "playwright show-report",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.58.2",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
+  }
+}
