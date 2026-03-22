@@ -4,13 +4,15 @@ End-to-end API automation suite for the [Mockerito Education sandbox](https://mo
 
 ## Tech stack
 
-| Tool                                         | Purpose                                           |
-| -------------------------------------------- | ------------------------------------------------- |
-| [@playwright/test](https://playwright.dev)   | Test runner + `APIRequestContext` for HTTP        |
-| [Zod](https://zod.dev)                       | Schema definition and runtime response validation |
-| [@faker-js/faker](https://fakerjs.dev)       | Deterministic random test data generation         |
-| [TypeScript](https://www.typescriptlang.org) | Static typing throughout all layers               |
-| [Prettier](https://prettier.io)              | Consistent code formatting                        |
+| Tool                                                      | Purpose                                             |
+| --------------------------------------------------------- | --------------------------------------------------- |
+| [@playwright/test](https://playwright.dev)                | Test runner + `APIRequestContext` for HTTP          |
+| [Zod](https://zod.dev)                                    | Schema definition and runtime response validation   |
+| [@faker-js/faker](https://fakerjs.dev)                    | Deterministic random test data generation           |
+| [TypeScript](https://www.typescriptlang.org)              | Static typing throughout all layers                 |
+| [Prettier](https://prettier.io)                           | Consistent code formatting                          |
+| [Husky](https://typicode.github.io/husky)                 | Git pre-commit hook — runs Prettier via lint-staged |
+| [lint-staged](https://github.com/lint-staged/lint-staged) | Runs Prettier only on staged files                  |
 
 ## Architecture
 
@@ -35,16 +37,16 @@ tests/         Spec files — Given / When / Then via test.step()
 
 ## Resources covered
 
-| Resource    | Tests | Notes                                                        |
-| ----------- | ----- | ------------------------------------------------------------ |
-| Auth        | 2     | Login success + invalid credentials                          |
-| Assignments | 9     | Full CRUD + types list + submissions sub-resource            |
-| Courses     | 10    | Full CRUD + categories/levels lists + search                 |
-| Teachers    | 9     | Full CRUD + specializations list + courses sub-resource      |
-| Users       | 7     | Full CRUD                                                    |
+| Resource    | Tests | Notes                                                                       |
+| ----------- | ----- | --------------------------------------------------------------------------- |
+| Auth        | 2     | Login success + invalid credentials                                         |
+| Assignments | 9     | Full CRUD + types list + submissions sub-resource                           |
+| Courses     | 10    | Full CRUD + categories/levels lists + search                                |
+| Teachers    | 9     | Full CRUD + specializations list + courses sub-resource                     |
+| Users       | 7     | Full CRUD                                                                   |
 | Students    | —     | Full CRUD service, DTO, factory, and fixture implemented; spec file pending |
-| Enrollments | 9     | Full CRUD + statuses list                                    |
-| Submissions | 9     | Full CRUD + grade endpoint + statuses list                   |
+| Enrollments | 9     | Full CRUD + statuses list                                                   |
+| Submissions | 9     | Full CRUD + grade endpoint + statuses list                                  |
 
 **Total: 55 tests**
 
@@ -79,3 +81,20 @@ npm run report
 npm run format        # fix
 npm run format:check  # check only (CI)
 ```
+
+A pre-commit hook (Husky + lint-staged) automatically formats staged `.ts`, `.json`, and `.md` files before every commit.
+
+## CI / CD
+
+GitHub Actions runs the full test suite on every push to `master` and every pull request.
+
+**Pipeline steps:**
+
+1. Install dependencies with `npm ci`
+2. Run `npm test` against the live Mockerito sandbox
+3. Upload the Playwright HTML report as a build artifact (retained 30 days)
+4. Deploy the HTML report to GitHub Pages on every `master` push
+
+**View the latest test report:** [GitHub Pages report](../../actions) _(enable Pages under Settings → Pages → Source → GitHub Actions to activate)_
+
+Workflow file: [`.github/workflows/playwright.yml`](.github/workflows/playwright.yml)
