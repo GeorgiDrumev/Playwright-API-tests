@@ -1,6 +1,10 @@
 import { faker } from '@faker-js/faker';
 import type { CreateUserRequest, UpdateUserRequest, LoginRequest } from '@dtos/user.dto';
 
+/**
+ * Factory for generating User test payloads using Faker.
+ * Also provides `buildLoginRequest()` for auth-related test scenarios.
+ */
 export class UserFactory {
   static build(overrides: Partial<CreateUserRequest> = {}): CreateUserRequest {
     return {

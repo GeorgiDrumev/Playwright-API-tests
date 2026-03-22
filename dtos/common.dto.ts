@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+/** Zod schema for a physical address shared across multiple resources. */
 export const AddressSchema = z.object({
   city: z.string().nullable(),
   street: z.string().nullable(),
@@ -10,6 +11,7 @@ export const AddressSchema = z.object({
 
 export type Address = z.infer<typeof AddressSchema>;
 
+/** Zod schema for RFC 7807 Problem Details error responses. */
 export const ProblemDetailsSchema = z.object({
   detail: z.string().nullable().optional(),
   instance: z.string().nullable().optional(),

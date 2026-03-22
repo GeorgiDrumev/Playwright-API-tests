@@ -10,6 +10,10 @@ type CourseFixtures = {
   createdCourse: Course;
 };
 
+/**
+ * Playwright fixture for the Course resource.
+ * Provides `courseService` and `createdCourse` (created before each test, deleted after).
+ */
 export const test = base.extend<CourseFixtures>({
   courseService: async ({ request }, use) => {
     await use(new CourseService(new HttpClient(request)));

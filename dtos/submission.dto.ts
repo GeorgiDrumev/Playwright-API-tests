@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+/** Zod schema and TypeScript type for a Submission resource. */
 export const SubmissionSchema = z.object({
   id: z.number().int(),
   assignmentId: z.number().int(),

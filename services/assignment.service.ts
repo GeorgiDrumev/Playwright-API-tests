@@ -2,6 +2,10 @@ import type { APIResponse } from '@playwright/test';
 import { HttpClient } from '@utils/http-client';
 import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '@dtos/assignment.dto';
 
+/**
+ * Service for the `/education/api/assignments` endpoint group.
+ * Wraps all CRUD operations plus assignment types and submissions sub-resource.
+ */
 export class AssignmentService {
   constructor(private readonly http: HttpClient) {}
 

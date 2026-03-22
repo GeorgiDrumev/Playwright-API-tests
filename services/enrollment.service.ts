@@ -2,6 +2,10 @@ import type { APIResponse } from '@playwright/test';
 import { HttpClient } from '@utils/http-client';
 import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '@dtos/enrollment.dto';
 
+/**
+ * Service for the `/education/api/enrollments` endpoint group.
+ * Wraps all CRUD operations plus enrollment statuses reference data.
+ */
 export class EnrollmentService {
   constructor(private readonly http: HttpClient) {}
 

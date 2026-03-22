@@ -10,6 +10,10 @@ const COURSE_CATEGORIES = [
 ] as const;
 const COURSE_LEVELS = ['Beginner', 'Intermediate', 'Advanced'] as const;
 
+/**
+ * Factory for generating Course test payloads using Faker.
+ * Provides `published()` and `free()` convenience builders in addition to the standard CRUD builders.
+ */
 export class CourseFactory {
   static build(overrides: Partial<CreateCourseRequest> = {}): CreateCourseRequest {
     const now = new Date().toISOString();

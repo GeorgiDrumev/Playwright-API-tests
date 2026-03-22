@@ -9,6 +9,10 @@ type TeacherFixtures = {
   createdTeacher: Teacher;
 };
 
+/**
+ * Playwright fixture for the Teacher resource.
+ * Provides `teacherService` and `createdTeacher` (created before each test, deleted after).
+ */
 export const test = base.extend<TeacherFixtures>({
   teacherService: async ({ request }, use) => {
     await use(new TeacherService(new HttpClient(request)));

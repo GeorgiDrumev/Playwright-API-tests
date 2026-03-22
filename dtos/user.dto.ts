@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { AddressSchema } from '@dtos/common.dto';
 
+/** Zod schema and TypeScript type for a User resource. */
 export const UserSchema = z.object({
   id: z.number().int(),
   email: z.string().nullable(),

@@ -11,6 +11,10 @@ const SPECIALIZATIONS = [
   'DevOps',
 ] as const;
 
+/**
+ * Factory for generating Teacher test payloads using Faker.
+ * Provides an `expert()` convenience builder for high-experience teacher scenarios.
+ */
 export class TeacherFactory {
   static build(overrides: Partial<CreateTeacherRequest> = {}): CreateTeacherRequest {
     return {

@@ -10,6 +10,11 @@ type EnrollmentFixtures = {
   createdEnrollment: Enrollment;
 };
 
+/**
+ * Playwright fixture for the Enrollment resource.
+ * Extends `studentTest` so that `createdStudent` is available.
+ * Provides `enrollmentService` and `createdEnrollment` (created before each test, deleted after).
+ */
 export const test = studentTest.extend<EnrollmentFixtures>({
   enrollmentService: async ({ request }, use) => {
     await use(new EnrollmentService(new HttpClient(request)));

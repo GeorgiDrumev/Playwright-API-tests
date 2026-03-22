@@ -1,6 +1,10 @@
 import { faker } from '@faker-js/faker';
 import type { CreateStudentRequest, UpdateStudentRequest } from '@dtos/student.dto';
 
+/**
+ * Factory for generating Student test payloads using Faker.
+ * Use `build()` for a single payload, `buildMany()` for an array, and `buildUpdate()` for a partial update.
+ */
 export class StudentFactory {
   static build(overrides: Partial<CreateStudentRequest> = {}): CreateStudentRequest {
     return {

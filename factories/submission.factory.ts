@@ -7,6 +7,10 @@ import type {
 
 const SUBMISSION_STATUSES = ['Pending', 'Graded', 'Late', 'Resubmit'] as const;
 
+/**
+ * Factory for generating Submission test payloads using Faker.
+ * Provides `late()`, `graded()`, and `buildGrade()` convenience builders.
+ */
 export class SubmissionFactory {
   static build(overrides: Partial<CreateSubmissionRequest> = {}): CreateSubmissionRequest {
     return {

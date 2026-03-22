@@ -6,6 +6,10 @@ import type {
   GradeSubmissionRequest,
 } from '@dtos/submission.dto';
 
+/**
+ * Service for the `/education/api/submissions` endpoint group.
+ * Wraps all CRUD operations plus grading and submission statuses reference data.
+ */
 export class SubmissionService {
   constructor(private readonly http: HttpClient) {}
 

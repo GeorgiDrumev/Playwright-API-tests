@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+/** Zod schema and TypeScript type for a Student resource. */
 export const StudentSchema = z.object({
   id: z.number().int(),
   firstName: z.string().nullable(),

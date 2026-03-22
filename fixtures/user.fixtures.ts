@@ -9,6 +9,10 @@ type UserFixtures = {
   createdUser: User;
 };
 
+/**
+ * Playwright fixture for the User resource.
+ * Provides `userService` and `createdUser` (created before each test, deleted after).
+ */
 export const test = base.extend<UserFixtures>({
   userService: async ({ request }, use) => {
     await use(new UserService(new HttpClient(request)));

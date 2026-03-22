@@ -10,6 +10,10 @@ type AssignmentFixtures = {
   createdAssignment: Assignment;
 };
 
+/**
+ * Playwright fixture for the Assignment resource.
+ * Provides `assignmentService` and `createdAssignment` (created before each test, deleted after).
+ */
 export const test = base.extend<AssignmentFixtures>({
   assignmentService: async ({ request }, use) => {
     await use(new AssignmentService(new HttpClient(request)));

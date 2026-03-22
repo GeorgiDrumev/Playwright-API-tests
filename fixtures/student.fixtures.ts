@@ -9,6 +9,10 @@ type StudentFixtures = {
   createdStudent: Student;
 };
 
+/**
+ * Playwright fixture for the Student resource.
+ * Provides `studentService` and `createdStudent` (created before each test, deleted after).
+ */
 export const test = base.extend<StudentFixtures>({
   studentService: async ({ request }, use) => {
     await use(new StudentService(new HttpClient(request)));

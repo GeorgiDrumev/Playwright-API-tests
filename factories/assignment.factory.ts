@@ -3,6 +3,10 @@ import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '@dtos/ass
 
 const ASSIGNMENT_TYPES = ['Quiz', 'Project', 'Essay', 'Code', 'Homework'] as const;
 
+/**
+ * Factory for generating Assignment test payloads using Faker.
+ * Provides `published()` and `unpublished()` convenience builders.
+ */
 export class AssignmentFactory {
   static build(overrides: Partial<CreateAssignmentRequest> = {}): CreateAssignmentRequest {
     const dueDate = faker.date.future();

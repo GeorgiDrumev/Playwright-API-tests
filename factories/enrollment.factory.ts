@@ -3,6 +3,10 @@ import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '@dtos/enr
 
 const ENROLLMENT_STATUSES = ['Active', 'Completed', 'Dropped'] as const;
 
+/**
+ * Factory for generating Enrollment test payloads using Faker.
+ * Provides a `completed()` convenience builder for fully-completed enrollment scenarios.
+ */
 export class EnrollmentFactory {
   static build(overrides: Partial<CreateEnrollmentRequest> = {}): CreateEnrollmentRequest {
     const now = new Date().toISOString();

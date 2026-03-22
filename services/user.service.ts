@@ -2,6 +2,10 @@ import type { APIResponse } from '@playwright/test';
 import { HttpClient } from '@utils/http-client';
 import type { CreateUserRequest, UpdateUserRequest } from '@dtos/user.dto';
 
+/**
+ * Service for the `/api/users` endpoint group.
+ * Wraps all CRUD operations for the User resource.
+ */
 export class UserService {
   constructor(private readonly http: HttpClient) {}
 

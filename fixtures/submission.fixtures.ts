@@ -10,6 +10,11 @@ type SubmissionFixtures = {
   createdSubmission: Submission;
 };
 
+/**
+ * Playwright fixture for the Submission resource.
+ * Extends `enrollmentTest` so that `createdStudent` and `createdEnrollment` are available.
+ * Provides `submissionService` and `createdSubmission` (created before each test, deleted after).
+ */
 export const test = enrollmentTest.extend<SubmissionFixtures>({
   submissionService: async ({ request }, use) => {
     await use(new SubmissionService(new HttpClient(request)));

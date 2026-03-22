@@ -6,6 +6,10 @@ type AuthFixtures = {
   authService: AuthService;
 };
 
+/**
+ * Playwright fixture for the Auth resource.
+ * Provides `authService` wired up with a fresh `HttpClient` for each test.
+ */
 export const test = base.extend<AuthFixtures>({
   authService: async ({ request }, use) => {
     await use(new AuthService(new HttpClient(request)));

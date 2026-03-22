@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+/** Zod schema and TypeScript type for an Assignment resource. */
 export const AssignmentSchema = z.object({
   id: z.number().int(),
   courseId: z.number().int(),

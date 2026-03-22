@@ -2,6 +2,10 @@ import type { APIResponse } from '@playwright/test';
 import { HttpClient } from '@utils/http-client';
 import type { CreateTeacherRequest, UpdateTeacherRequest } from '@dtos/teacher.dto';
 
+/**
+ * Service for the `/education/api/teachers` endpoint group.
+ * Wraps all CRUD operations plus specializations and courses sub-resource for the Teacher resource.
+ */
 export class TeacherService {
   constructor(private readonly http: HttpClient) {}
 

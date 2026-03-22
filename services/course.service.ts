@@ -2,6 +2,10 @@ import type { APIResponse } from '@playwright/test';
 import { HttpClient } from '@utils/http-client';
 import type { CreateCourseRequest, UpdateCourseRequest } from '@dtos/course.dto';
 
+/**
+ * Service for the `/education/api/courses` endpoint group.
+ * Wraps all CRUD operations plus search and reference-data lookups for the Course resource.
+ */
 export class CourseService {
   constructor(private readonly http: HttpClient) {}
 
