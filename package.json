@@ -9,11 +9,17 @@
     "test:report": "playwright test --reporter=html",
     "report": "playwright show-report",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,json,md}": "prettier --write --ignore-unknown"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
     "@playwright/test": "^1.58.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "zod": "^3.25.76"
