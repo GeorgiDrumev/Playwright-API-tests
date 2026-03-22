@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/submission.fixtures';
 import { SubmissionFactory } from '../factories/submission.factory';
 import { SubmissionSchema, SubmissionStatusesResponseSchema } from '../dtos/submission.dto';
+import { SANDBOX_ASSIGNMENT_ID } from '../data/test-data/sandbox.data';
 
 test.describe('Submissions API', () => {
   test('GET /education/api/submissions/statuses — returns available statuses', async ({
@@ -38,7 +39,10 @@ test.describe('Submissions API', () => {
     createdEnrollment,
   }) => {
     const payload = await test.step('Given', async () =>
-      SubmissionFactory.build({ assignmentId: 1, studentId: createdStudent.id }));
+      SubmissionFactory.build({
+        assignmentId: SANDBOX_ASSIGNMENT_ID,
+        studentId: createdStudent.id,
+      }));
 
     const response = await test.step('When', async () => submissionService.create(payload));
 
@@ -65,7 +69,10 @@ test.describe('Submissions API', () => {
     createdEnrollment,
   }) => {
     const payload = await test.step('Given', async () =>
-      SubmissionFactory.late({ assignmentId: 1, studentId: createdStudent.id }));
+      SubmissionFactory.late({
+        assignmentId: SANDBOX_ASSIGNMENT_ID,
+        studentId: createdStudent.id,
+      }));
 
     const response = await test.step('When', async () => submissionService.create(payload));
 
@@ -156,7 +163,10 @@ test.describe('Submissions API', () => {
   }) => {
     const submissionId = await test.step('Given', async () => {
       const createResponse = await submissionService.create(
-        SubmissionFactory.build({ assignmentId: 1, studentId: createdStudent.id }),
+        SubmissionFactory.build({
+          assignmentId: SANDBOX_ASSIGNMENT_ID,
+          studentId: createdStudent.id,
+        }),
       );
       expect(createResponse.ok()).toBeTruthy();
       const body = await createResponse.json();

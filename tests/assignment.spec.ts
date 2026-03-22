@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/assignment.fixtures';
 import { AssignmentFactory } from '../factories/assignment.factory';
 import { AssignmentSchema, AssignmentTypesResponseSchema } from '../dtos/assignment.dto';
+import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
 
 test.describe('Assignments API', () => {
   test('GET /education/api/assignments/types — returns a list of assignment types', async ({
@@ -36,7 +37,7 @@ test.describe('Assignments API', () => {
     assignmentService,
   }) => {
     const payload = await test.step('Given', async () =>
-      AssignmentFactory.published({ courseId: 1 }));
+      AssignmentFactory.published({ courseId: SANDBOX_COURSE_ID }));
 
     const response = await test.step('When', async () => assignmentService.create(payload));
 
@@ -59,7 +60,7 @@ test.describe('Assignments API', () => {
     assignmentService,
   }) => {
     const payload = await test.step('Given', async () =>
-      AssignmentFactory.unpublished({ courseId: 1 }));
+      AssignmentFactory.unpublished({ courseId: SANDBOX_COURSE_ID }));
 
     const response = await test.step('When', async () => assignmentService.create(payload));
 
@@ -129,7 +130,7 @@ test.describe('Assignments API', () => {
   }) => {
     const assignmentId = await test.step('Given', async () => {
       const createResponse = await assignmentService.create(
-        AssignmentFactory.published({ courseId: 1 }),
+        AssignmentFactory.published({ courseId: SANDBOX_COURSE_ID }),
       );
       expect(createResponse.ok()).toBeTruthy();
       const body = await createResponse.json();

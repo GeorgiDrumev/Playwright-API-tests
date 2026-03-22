@@ -5,6 +5,7 @@ import {
   CourseCategoriesResponseSchema,
   CourseLevelsResponseSchema,
 } from '../dtos/course.dto';
+import { SANDBOX_TEACHER_ID } from '../data/test-data/sandbox.data';
 
 test.describe('Courses API', () => {
   test('GET /education/api/courses/categories — returns a list of categories', async ({
@@ -52,7 +53,8 @@ test.describe('Courses API', () => {
   test('POST /education/api/courses — creates a course with valid payload', async ({
     courseService,
   }) => {
-    const payload = await test.step('Given', async () => CourseFactory.published({ teacherId: 1 }));
+    const payload = await test.step('Given', async () =>
+      CourseFactory.published({ teacherId: SANDBOX_TEACHER_ID }));
 
     const response = await test.step('When', async () => courseService.create(payload));
 
@@ -72,7 +74,8 @@ test.describe('Courses API', () => {
   });
 
   test('POST /education/api/courses — creates a free course', async ({ courseService }) => {
-    const payload = await test.step('Given', async () => CourseFactory.free({ teacherId: 1 }));
+    const payload = await test.step('Given', async () =>
+      CourseFactory.free({ teacherId: SANDBOX_TEACHER_ID }));
 
     const response = await test.step('When', async () => courseService.create(payload));
 
@@ -141,7 +144,9 @@ test.describe('Courses API', () => {
     courseService,
   }) => {
     const courseId = await test.step('Given', async () => {
-      const createResponse = await courseService.create(CourseFactory.published({ teacherId: 1 }));
+      const createResponse = await courseService.create(
+        CourseFactory.published({ teacherId: SANDBOX_TEACHER_ID }),
+      );
       expect(createResponse.ok()).toBeTruthy();
       const body = await createResponse.json();
       return CourseSchema.parse(body).id;

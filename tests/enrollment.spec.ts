@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/enrollment.fixtures';
 import { EnrollmentFactory } from '../factories/enrollment.factory';
 import { EnrollmentSchema, EnrollmentStatusesResponseSchema } from '../dtos/enrollment.dto';
+import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
 
 test.describe('Enrollments API', () => {
   test('GET /education/api/enrollments/statuses — returns available statuses', async ({
@@ -37,7 +38,7 @@ test.describe('Enrollments API', () => {
     createdStudent,
   }) => {
     const payload = await test.step('Given', async () =>
-      EnrollmentFactory.build({ studentId: createdStudent.id, courseId: 1 }));
+      EnrollmentFactory.build({ studentId: createdStudent.id, courseId: SANDBOX_COURSE_ID }));
 
     const response = await test.step('When', async () => enrollmentService.create(payload));
 
@@ -61,7 +62,7 @@ test.describe('Enrollments API', () => {
     createdStudent,
   }) => {
     const payload = await test.step('Given', async () =>
-      EnrollmentFactory.completed({ studentId: createdStudent.id, courseId: 1 }));
+      EnrollmentFactory.completed({ studentId: createdStudent.id, courseId: SANDBOX_COURSE_ID }));
 
     const response = await test.step('When', async () => enrollmentService.create(payload));
 
@@ -149,7 +150,7 @@ test.describe('Enrollments API', () => {
   }) => {
     const enrollmentId = await test.step('Given', async () => {
       const createResponse = await enrollmentService.create(
-        EnrollmentFactory.build({ studentId: createdStudent.id, courseId: 1 }),
+        EnrollmentFactory.build({ studentId: createdStudent.id, courseId: SANDBOX_COURSE_ID }),
       );
       expect(createResponse.ok()).toBeTruthy();
       const body = await createResponse.json();

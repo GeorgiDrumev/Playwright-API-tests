@@ -3,6 +3,7 @@ import { HttpClient } from '../utils/http-client';
 import { CourseService } from '../services/course.service';
 import { CourseFactory } from '../factories/course.factory';
 import { CourseSchema, type Course } from '../dtos/course.dto';
+import { SANDBOX_TEACHER_ID } from '../data/test-data/sandbox.data';
 
 type CourseFixtures = {
   courseService: CourseService;
@@ -16,7 +17,7 @@ export const test = base.extend<CourseFixtures>({
 
   createdCourse: async ({ request }, use) => {
     const service = new CourseService(new HttpClient(request));
-    const payload = CourseFactory.published({ teacherId: 1 });
+    const payload = CourseFactory.published({ teacherId: SANDBOX_TEACHER_ID });
 
     const response = await service.create(payload);
     expect(response.ok()).toBeTruthy();

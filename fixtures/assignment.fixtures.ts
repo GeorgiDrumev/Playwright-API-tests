@@ -3,6 +3,7 @@ import { HttpClient } from '../utils/http-client';
 import { AssignmentService } from '../services/assignment.service';
 import { AssignmentFactory } from '../factories/assignment.factory';
 import { AssignmentSchema, type Assignment } from '../dtos/assignment.dto';
+import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
 
 type AssignmentFixtures = {
   assignmentService: AssignmentService;
@@ -16,7 +17,7 @@ export const test = base.extend<AssignmentFixtures>({
 
   createdAssignment: async ({ request }, use) => {
     const service = new AssignmentService(new HttpClient(request));
-    const payload = AssignmentFactory.published({ courseId: 1 });
+    const payload = AssignmentFactory.published({ courseId: SANDBOX_COURSE_ID });
 
     const response = await service.create(payload);
     expect(response.ok()).toBeTruthy();

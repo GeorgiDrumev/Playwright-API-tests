@@ -3,6 +3,7 @@ import { HttpClient } from '../utils/http-client';
 import { SubmissionService } from '../services/submission.service';
 import { SubmissionFactory } from '../factories/submission.factory';
 import { SubmissionSchema, type Submission } from '../dtos/submission.dto';
+import { SANDBOX_ASSIGNMENT_ID } from '../data/test-data/sandbox.data';
 
 type SubmissionFixtures = {
   submissionService: SubmissionService;
@@ -16,7 +17,10 @@ export const test = enrollmentTest.extend<SubmissionFixtures>({
 
   createdSubmission: async ({ request, createdStudent, createdEnrollment }, use) => {
     const service = new SubmissionService(new HttpClient(request));
-    const payload = SubmissionFactory.build({ studentId: createdStudent.id, assignmentId: 1 });
+    const payload = SubmissionFactory.build({
+      studentId: createdStudent.id,
+      assignmentId: SANDBOX_ASSIGNMENT_ID,
+    });
 
     const response = await service.create(payload);
     expect(response.ok()).toBeTruthy();
