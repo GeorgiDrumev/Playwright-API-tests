@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '../dtos/enrollment.dto';
+import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '@dtos/enrollment.dto';
 
 const ENROLLMENT_STATUSES = ['Active', 'Completed', 'Dropped'] as const;
 

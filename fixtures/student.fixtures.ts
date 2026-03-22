@@ -1,8 +1,8 @@
 import { test as base, expect } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import { StudentService } from '../services/student.service';
-import { StudentFactory } from '../factories/student.factory';
-import { StudentSchema, type Student } from '../dtos/student.dto';
+import { HttpClient } from '@utils/http-client';
+import { StudentService } from '@services/student.service';
+import { StudentFactory } from '@factories/student.factory';
+import { StudentSchema, type Student } from '@dtos/student.dto';
 
 type StudentFixtures = {
   studentService: StudentService;

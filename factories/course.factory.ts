@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateCourseRequest, UpdateCourseRequest } from '../dtos/course.dto';
+import type { CreateCourseRequest, UpdateCourseRequest } from '@dtos/course.dto';
 
 const COURSE_CATEGORIES = [
   'Programming',

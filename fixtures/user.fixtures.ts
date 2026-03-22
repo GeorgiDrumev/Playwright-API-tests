@@ -1,8 +1,8 @@
 import { test as base, expect } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import { UserService } from '../services/user.service';
-import { UserFactory } from '../factories/user.factory';
-import { UserSchema, type User } from '../dtos/user.dto';
+import { HttpClient } from '@utils/http-client';
+import { UserService } from '@services/user.service';
+import { UserFactory } from '@factories/user.factory';
+import { UserSchema, type User } from '@dtos/user.dto';
 
 type UserFixtures = {
   userService: UserService;

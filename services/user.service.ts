@@ -1,6 +1,6 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import type { CreateUserRequest, UpdateUserRequest } from '../dtos/user.dto';
+import { HttpClient } from '@utils/http-client';
+import type { CreateUserRequest, UpdateUserRequest } from '@dtos/user.dto';
 
 export class UserService {
   constructor(private readonly http: HttpClient) {}

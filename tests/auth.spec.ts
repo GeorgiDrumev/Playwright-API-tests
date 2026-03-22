@@ -1,6 +1,6 @@
-import { test, expect } from '../fixtures/auth.fixtures';
-import { UserFactory } from '../factories/user.factory';
-import { VALID_CREDENTIALS, INVALID_CREDENTIALS } from '../data/test-data/auth.data';
+import { test, expect } from '@fixtures/auth.fixtures';
+import { UserFactory } from '@factories/user.factory';
+import { VALID_CREDENTIALS, INVALID_CREDENTIALS } from '@data/test-data/auth.data';
 
 test.describe('Auth API', () => {
   test('POST /api/auth/login — returns 200 with valid credentials', async ({ authService }) => {

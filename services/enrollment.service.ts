@@ -1,6 +1,6 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '../dtos/enrollment.dto';
+import { HttpClient } from '@utils/http-client';
+import type { CreateEnrollmentRequest, UpdateEnrollmentRequest } from '@dtos/enrollment.dto';
 
 export class EnrollmentService {
   constructor(private readonly http: HttpClient) {}

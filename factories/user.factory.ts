@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateUserRequest, UpdateUserRequest, LoginRequest } from '../dtos/user.dto';
+import type { CreateUserRequest, UpdateUserRequest, LoginRequest } from '@dtos/user.dto';
 
 export class UserFactory {
   static build(overrides: Partial<CreateUserRequest> = {}): CreateUserRequest {

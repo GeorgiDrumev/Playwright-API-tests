@@ -1,9 +1,9 @@
 import { test as base, expect } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import { AssignmentService } from '../services/assignment.service';
-import { AssignmentFactory } from '../factories/assignment.factory';
-import { AssignmentSchema, type Assignment } from '../dtos/assignment.dto';
-import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
+import { HttpClient } from '@utils/http-client';
+import { AssignmentService } from '@services/assignment.service';
+import { AssignmentFactory } from '@factories/assignment.factory';
+import { AssignmentSchema, type Assignment } from '@dtos/assignment.dto';
+import { SANDBOX_COURSE_ID } from '@data/test-data/sandbox.data';
 
 type AssignmentFixtures = {
   assignmentService: AssignmentService;

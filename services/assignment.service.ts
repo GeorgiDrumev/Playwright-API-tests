@@ -1,6 +1,6 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '../dtos/assignment.dto';
+import { HttpClient } from '@utils/http-client';
+import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '@dtos/assignment.dto';
 
 export class AssignmentService {
   constructor(private readonly http: HttpClient) {}

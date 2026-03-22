@@ -1,6 +1,6 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import type { CreateCourseRequest, UpdateCourseRequest } from '../dtos/course.dto';
+import { HttpClient } from '@utils/http-client';
+import type { CreateCourseRequest, UpdateCourseRequest } from '@dtos/course.dto';
 
 export class CourseService {
   constructor(private readonly http: HttpClient) {}

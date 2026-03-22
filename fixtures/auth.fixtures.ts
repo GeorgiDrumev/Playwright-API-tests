@@ -1,6 +1,6 @@
 import { test as base, expect } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import { AuthService } from '../services/auth.service';
+import { HttpClient } from '@utils/http-client';
+import { AuthService } from '@services/auth.service';
 
 type AuthFixtures = {
   authService: AuthService;

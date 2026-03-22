@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateTeacherRequest, UpdateTeacherRequest } from '../dtos/teacher.dto';
+import type { CreateTeacherRequest, UpdateTeacherRequest } from '@dtos/teacher.dto';
 
 const SPECIALIZATIONS = [
   'JavaScript',

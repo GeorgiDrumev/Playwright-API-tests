@@ -1,7 +1,7 @@
-import { test, expect } from '../fixtures/assignment.fixtures';
-import { AssignmentFactory } from '../factories/assignment.factory';
-import { AssignmentSchema, AssignmentTypesResponseSchema } from '../dtos/assignment.dto';
-import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
+import { test, expect } from '@fixtures/assignment.fixtures';
+import { AssignmentFactory } from '@factories/assignment.factory';
+import { AssignmentSchema, AssignmentTypesResponseSchema } from '@dtos/assignment.dto';
+import { SANDBOX_COURSE_ID } from '@data/test-data/sandbox.data';
 
 test.describe('Assignments API', () => {
   test('GET /education/api/assignments/types — returns a list of assignment types', async ({

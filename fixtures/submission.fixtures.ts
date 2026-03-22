@@ -1,9 +1,9 @@
-import { test as enrollmentTest, expect } from './enrollment.fixtures';
-import { HttpClient } from '../utils/http-client';
-import { SubmissionService } from '../services/submission.service';
-import { SubmissionFactory } from '../factories/submission.factory';
-import { SubmissionSchema, type Submission } from '../dtos/submission.dto';
-import { SANDBOX_ASSIGNMENT_ID } from '../data/test-data/sandbox.data';
+import { test as enrollmentTest, expect } from '@fixtures/enrollment.fixtures';
+import { HttpClient } from '@utils/http-client';
+import { SubmissionService } from '@services/submission.service';
+import { SubmissionFactory } from '@factories/submission.factory';
+import { SubmissionSchema, type Submission } from '@dtos/submission.dto';
+import { SANDBOX_ASSIGNMENT_ID } from '@data/test-data/sandbox.data';
 
 type SubmissionFixtures = {
   submissionService: SubmissionService;

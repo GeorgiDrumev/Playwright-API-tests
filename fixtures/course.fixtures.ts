@@ -1,9 +1,9 @@
 import { test as base, expect } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import { CourseService } from '../services/course.service';
-import { CourseFactory } from '../factories/course.factory';
-import { CourseSchema, type Course } from '../dtos/course.dto';
-import { SANDBOX_TEACHER_ID } from '../data/test-data/sandbox.data';
+import { HttpClient } from '@utils/http-client';
+import { CourseService } from '@services/course.service';
+import { CourseFactory } from '@factories/course.factory';
+import { CourseSchema, type Course } from '@dtos/course.dto';
+import { SANDBOX_TEACHER_ID } from '@data/test-data/sandbox.data';
 
 type CourseFixtures = {
   courseService: CourseService;

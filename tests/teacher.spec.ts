@@ -1,6 +1,6 @@
-import { test, expect } from '../fixtures/teacher.fixtures';
-import { TeacherFactory } from '../factories/teacher.factory';
-import { TeacherSchema, TeacherSpecializationsResponseSchema } from '../dtos/teacher.dto';
+import { test, expect } from '@fixtures/teacher.fixtures';
+import { TeacherFactory } from '@factories/teacher.factory';
+import { TeacherSchema, TeacherSpecializationsResponseSchema } from '@dtos/teacher.dto';
 
 test.describe('Teachers API', () => {
   test('GET /education/api/teachers/specializations — returns a list of specializations', async ({

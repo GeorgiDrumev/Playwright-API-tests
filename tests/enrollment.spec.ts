@@ -1,7 +1,7 @@
-import { test, expect } from '../fixtures/enrollment.fixtures';
-import { EnrollmentFactory } from '../factories/enrollment.factory';
-import { EnrollmentSchema, EnrollmentStatusesResponseSchema } from '../dtos/enrollment.dto';
-import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
+import { test, expect } from '@fixtures/enrollment.fixtures';
+import { EnrollmentFactory } from '@factories/enrollment.factory';
+import { EnrollmentSchema, EnrollmentStatusesResponseSchema } from '@dtos/enrollment.dto';
+import { SANDBOX_COURSE_ID } from '@data/test-data/sandbox.data';
 
 test.describe('Enrollments API', () => {
   test('GET /education/api/enrollments/statuses — returns available statuses', async ({

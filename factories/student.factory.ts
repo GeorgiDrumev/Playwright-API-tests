@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateStudentRequest, UpdateStudentRequest } from '../dtos/student.dto';
+import type { CreateStudentRequest, UpdateStudentRequest } from '@dtos/student.dto';
 
 export class StudentFactory {
   static build(overrides: Partial<CreateStudentRequest> = {}): CreateStudentRequest {

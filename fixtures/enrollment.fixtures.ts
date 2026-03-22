@@ -1,9 +1,9 @@
-import { test as studentTest, expect } from './student.fixtures';
-import { HttpClient } from '../utils/http-client';
-import { EnrollmentService } from '../services/enrollment.service';
-import { EnrollmentFactory } from '../factories/enrollment.factory';
-import { EnrollmentSchema, type Enrollment } from '../dtos/enrollment.dto';
-import { SANDBOX_COURSE_ID } from '../data/test-data/sandbox.data';
+import { test as studentTest, expect } from '@fixtures/student.fixtures';
+import { HttpClient } from '@utils/http-client';
+import { EnrollmentService } from '@services/enrollment.service';
+import { EnrollmentFactory } from '@factories/enrollment.factory';
+import { EnrollmentSchema, type Enrollment } from '@dtos/enrollment.dto';
+import { SANDBOX_COURSE_ID } from '@data/test-data/sandbox.data';
 
 type EnrollmentFixtures = {
   enrollmentService: EnrollmentService;

@@ -1,6 +1,6 @@
-import { test, expect } from '../fixtures/user.fixtures';
-import { UserFactory } from '../factories/user.factory';
-import { UserSchema } from '../dtos/user.dto';
+import { test, expect } from '@fixtures/user.fixtures';
+import { UserFactory } from '@factories/user.factory';
+import { UserSchema } from '@dtos/user.dto';
 
 test.describe('Users API', () => {
   test('GET /api/users — returns a list of users', async ({ userService }) => {

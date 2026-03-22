@@ -86,7 +86,7 @@ A pre-commit hook (Husky + lint-staged) automatically formats staged `.ts`, `.js
 
 ## CI / CD
 
-GitHub Actions runs the full test suite on every push to `master` and every pull request.
+GitHub Actions runs the full test suite on every push to `git branch -M main` and every pull request.
 
 **Pipeline steps:**
 

@@ -1,6 +1,6 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
-import type { LoginRequest } from '../dtos/user.dto';
+import { HttpClient } from '@utils/http-client';
+import type { LoginRequest } from '@dtos/user.dto';
 
 export class AuthService {
   constructor(private readonly http: HttpClient) {}

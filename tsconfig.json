@@ -14,7 +14,8 @@
       "@factories/*": ["factories/*"],
       "@services/*": ["services/*"],
       "@fixtures/*": ["fixtures/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@data/*": ["data/*"]
     }
   },
   "include": ["**/*.ts"],

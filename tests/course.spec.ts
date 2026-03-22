@@ -1,11 +1,11 @@
-import { test, expect } from '../fixtures/course.fixtures';
-import { CourseFactory } from '../factories/course.factory';
+import { test, expect } from '@fixtures/course.fixtures';
+import { CourseFactory } from '@factories/course.factory';
 import {
   CourseSchema,
   CourseCategoriesResponseSchema,
   CourseLevelsResponseSchema,
-} from '../dtos/course.dto';
-import { SANDBOX_TEACHER_ID } from '../data/test-data/sandbox.data';
+} from '@dtos/course.dto';
+import { SANDBOX_TEACHER_ID } from '@data/test-data/sandbox.data';
 
 test.describe('Courses API', () => {
   test('GET /education/api/courses/categories — returns a list of categories', async ({

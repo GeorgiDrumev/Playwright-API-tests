@@ -1,7 +1,7 @@
-import { test, expect } from '../fixtures/submission.fixtures';
-import { SubmissionFactory } from '../factories/submission.factory';
-import { SubmissionSchema, SubmissionStatusesResponseSchema } from '../dtos/submission.dto';
-import { SANDBOX_ASSIGNMENT_ID } from '../data/test-data/sandbox.data';
+import { test, expect } from '@fixtures/submission.fixtures';
+import { SubmissionFactory } from '@factories/submission.factory';
+import { SubmissionSchema, SubmissionStatusesResponseSchema } from '@dtos/submission.dto';
+import { SANDBOX_ASSIGNMENT_ID } from '@data/test-data/sandbox.data';
 
 test.describe('Submissions API', () => {
   test('GET /education/api/submissions/statuses — returns available statuses', async ({

@@ -1,10 +1,10 @@
 import type { APIResponse } from '@playwright/test';
-import { HttpClient } from '../utils/http-client';
+import { HttpClient } from '@utils/http-client';
 import type {
   CreateSubmissionRequest,
   UpdateSubmissionRequest,
   GradeSubmissionRequest,
-} from '../dtos/submission.dto';
+} from '@dtos/submission.dto';
 
 export class SubmissionService {
   constructor(private readonly http: HttpClient) {}

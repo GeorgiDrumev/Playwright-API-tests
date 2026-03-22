@@ -1,5 +1,5 @@
 import type { APIRequestContext, APIResponse } from '@playwright/test';
-import { sleep } from './sleep';
+import { sleep } from '@utils/sleep';
 
 type RequestOptions = Parameters<APIRequestContext['get']>[1];
 

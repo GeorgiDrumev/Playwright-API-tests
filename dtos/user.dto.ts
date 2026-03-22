@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { AddressSchema } from './common.dto';
+import { AddressSchema } from '@dtos/common.dto';
 
 export const UserSchema = z.object({
   id: z.number().int(),

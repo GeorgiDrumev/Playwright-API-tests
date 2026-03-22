@@ -3,7 +3,7 @@ import type {
   CreateSubmissionRequest,
   UpdateSubmissionRequest,
   GradeSubmissionRequest,
-} from '../dtos/submission.dto';
+} from '@dtos/submission.dto';
 
 const SUBMISSION_STATUSES = ['Pending', 'Graded', 'Late', 'Resubmit'] as const;
 

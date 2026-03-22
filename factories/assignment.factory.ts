@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '../dtos/assignment.dto';
+import type { CreateAssignmentRequest, UpdateAssignmentRequest } from '@dtos/assignment.dto';
 
 const ASSIGNMENT_TYPES = ['Quiz', 'Project', 'Essay', 'Code', 'Homework'] as const;
 
