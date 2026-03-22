@@ -18,7 +18,7 @@ The project follows a strict layered architecture — each layer has a single re
 
 ```
 dtos/          Zod schemas + inferred TypeScript types (one file per resource)
-factories/     Static factory classes — build() / buildMany() for test payloads
+factories/     Static factory classes — build() / buildMany() / buildUpdate() for test payloads
 utils/         Shared utilities (HttpClient with 429 retry, sleep)
 services/      One class per endpoint group — wraps HttpClient, returns APIResponse
 fixtures/      Playwright fixture files — lifecycle management (create → use → cleanup)
@@ -38,13 +38,13 @@ tests/         Spec files — Given / When / Then via test.step()
 | Resource    | Tests | Notes                                                        |
 | ----------- | ----- | ------------------------------------------------------------ |
 | Auth        | 2     | Login success + invalid credentials                          |
-| Assignments | 8     | Full CRUD + types list + submissions sub-resource            |
-| Courses     | 8     | Full CRUD + categories/levels lists + search                 |
-| Teachers    | 8     | Full CRUD + specializations list + courses sub-resource      |
+| Assignments | 9     | Full CRUD + types list + submissions sub-resource            |
+| Courses     | 10    | Full CRUD + categories/levels lists + search                 |
+| Teachers    | 9     | Full CRUD + specializations list + courses sub-resource      |
 | Users       | 7     | Full CRUD                                                    |
 | Students    | —     | Full CRUD service, DTO, factory, and fixture implemented; spec file pending |
-| Enrollments | 8     | Full CRUD + statuses list                                    |
-| Submissions | 8     | Full CRUD + grade endpoint + statuses list                   |
+| Enrollments | 9     | Full CRUD + statuses list                                    |
+| Submissions | 9     | Full CRUD + grade endpoint + statuses list                   |
 
 **Total: 55 tests**
 
