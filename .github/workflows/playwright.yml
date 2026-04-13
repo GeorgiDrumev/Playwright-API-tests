@@ -34,6 +34,9 @@ jobs:
         run: npm ci
 
       - name: Run tests
+        env:
+          TESTOMATIO: ${{ secrets.TESTOMATIO_API_KEY }}
+          TESTOMATIO_TITLE: "Run ${{ github.run_number }} - ${{ github.ref_name }}"
         run: npm test
 
       - name: Upload HTML report artifact
