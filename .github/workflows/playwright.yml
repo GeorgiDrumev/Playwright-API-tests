@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [master]
   workflow_dispatch:
+    inputs:
+      run:
+        description: 'Testomat run ID'
+        required: false
+      grep:
+        description: 'Testomat test IDs to run'
+        required: false
 
 permissions:
   contents: read
@@ -38,7 +45,8 @@ jobs:
         env:
           TESTOMATIO: ${{ secrets.TESTOMATIO_API_KEY }}
           TESTOMATIO_TITLE: "Run ${{ github.run_number }} - ${{ github.ref_name }}"
-        run: npm test
+          TESTOMATIO_RUN: ${{ github.event.inputs.run }}
+        run: npm test -- ${{ github.event.inputs.grep && format('--grep "{0}"', github.event.inputs.grep) || '' }}
 
       - name: Upload HTML report artifact
         if: always()
